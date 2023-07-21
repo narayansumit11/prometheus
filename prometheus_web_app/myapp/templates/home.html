@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+   {% if user.is_authenticated %}
+        <div style="text-align: right">
+            <h3>Welcome {{ user.first_name }}!! <a href="/signout" class="logout">Logout</a></h3>
+        </div>
+        <div class="welcome">
+            <h1 style="text-align: center; margin-top: -70px;"><u>User Profile</u></h1>
+            <h1 class="name">First Name : {{ user.first_name }}</h1>
+            <h1 class="name">Last Name : {{ user.last_name }}</h1>
+            <h1 class="name">User Name : {{ user.username }}</h1>
+            <h1 class="name">Email ID : {{ user.email }}</h1>
+        </div>
+
+    {% else %}
+        <div class="welcome">
+            <h1 style="text-align: center;">Welcome To Prometheus!!!</h1>
+            <br>
+            <br>
+            <a href="/signin" style="text-decoration:none" class="button sign-in">Sign In</a>
+            <a href="/signup" style="text-decoration:none" class="button sign-up">Sign Up</a>
+        </div>
+
+    {% endif %}
+
+
+
+{% endblock %}
