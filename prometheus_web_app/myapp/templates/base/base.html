@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+    body {
+          background-image: url("{% static 'background.jpg' %}");
+          background-repeat: no-repeat;
+          background-size: cover;
+          opacity: 0.8;
+          margin: 0;
+          padding: 0;
+
+    </style>
+</head>
+<header>
+    <img class="logo" src="https://xlridelhi.ac.in/images/logo-xlri.svg" alt="For the greater good">
+
+
+    <div class="title-container">
+        <a href="/" style="text-decoration:none"><h1 class="flaming-title" id="flamingTitle" style="font-size:48px">
+            PROMETHEUS</h1></a>
+
+    </div>
+
+    <img class="prom_logo" style="float:right" src="https://prometheus.xlri.ac.in/images/Prom_logo_black.png">
+
+</header>
+<body>
+<div class="container">
+    <div class="left-section">
+        <div class="block">
+            <div class="block-content">
+                <h2 class="flaming-text"><br><br>Welcome <br><br> To The</h2>
+                <div class="flaming-text" id="flamingText"
+                     style="font-family: 'Brush Script MT', cursive; font-size: 78px;">House of Gods
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block-content">
+                <h2>About Us</h2>
+                <ul>
+                    <li>Product Management and Technology Club at XLRI</li>
+                    <li>SOCRATES + ProdUX, 36 years old</li>
+                </ul>
+                <br><br>
+                <ul>
+                    <h2>What We Offer</h2>
+                    <li>1 - 1 Mentorship</li>
+                    <li>Alum connects with PMs</li>
+                    <li>Loads of fun</li>
+                </ul>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block-content">
+                <h2>Events</h2>
+                <ul>
+                    <li>TeXLence : Techno-Management fest of XLRI</li>
+                    <li>Retribution : First ever E-Sports event of XLRI</li>
+                    <li>TechTopia : PM Case Comp during Nova Exilaro</li>
+                </ul>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block-content">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li>E-Mail: <a href="mailto: prometheus@xlri.ac.in">prometheus@xlri.ac.in</a></li>
+                    <li>Website: <a href="https://prometheus.xlri.ac.in">Prometheus</a></li>
+                    <li>Instagram : <a href="https://www.instagram.com/prometheus_xlri/">prometheus_xlri</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="right-section">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+
+
+</body>
+
+<script>
+    function changeColor() {
+      const textElement = document.getElementById("flamingText");
+      const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      textElement.style.backgroundImage = `linear-gradient(45deg, ${randomColor}, #ff3300, #ff0000)`;
+    }
+    setInterval(changeColor, 300);
+</script>
+
+<script>
+    function changeColor() {
+      const textElement = document.getElementById("flamingTitle");
+      const purpleColor = "#9c27b0";
+      textElement.style.backgroundImage = `linear-gradient(45deg, ${purpleColor}, #673ab7, #3f51b5)`;
+    }
+    setInterval(changeColor, 500);
+</script>
+
+</html>
+
+
+
+
